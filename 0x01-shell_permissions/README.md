@@ -1,0 +1,1 @@
+this involves granting shell permission to a user or more than one user at same time. chmod modify file access rights. sudo and su temporarily become superuser. chown changes file ownership. chgrp change a files group ownership
