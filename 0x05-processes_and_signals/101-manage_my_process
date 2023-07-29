@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# to start the process
+
+start_process() {
+    echo "Starting manage_my_process..."
+    /path/to/manage_my_process.sh &   # Replace /path/to/manage_my_process.sh with the actual path to your script
+    echo $! > /var/run/my_process.pid
+    echo "manage_my_process started"
+}
+
+to stop the process
+stop_process() {
+    echo "Stopping manage_my_process..."
+    kill $(cat /var/run/my_process.pid)
+    rm /var/run/my_process.pid
+    echo "manage_my_process stopped"
+}
+
+# to restart the process
+restart_process() {
+    stop_process
+    start_process
+    echo "manage_my_process restarted"
+}
+
+# main
+case "$1" in
+    start)
+        start_process
+        ;;
+    stop)
+        stop_process
+        ;;
+    restart)
+        restart_process
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        exit 1
+        ;;
+esac
