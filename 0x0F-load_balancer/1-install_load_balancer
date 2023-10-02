@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # script that script that configures a new Ubuntu machine with HAproxy load balancer
 
-apt-get -y update
-apt-get -y install haproxy
+sudo apt-get -y update
+sudo apt-get -y install haproxy
 
 server_config=\
 "
@@ -13,8 +13,8 @@ frontend Local_Server
 backend Web_Servers
         balance roundrobin
         mode http
-        server web-01 100.25.153.251:80 check
-        server web-02 35.175.126.70:80 check
+        server 294485-web-01 100.25.153.251:80 check
+        server 294485-web-02 35.175.126.70:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
