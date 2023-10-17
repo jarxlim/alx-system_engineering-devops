@@ -15,4 +15,4 @@ log_bin         = /var/log/mysql/mysql-bin.log
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
 
-binlog_do_db    = tyrell_cor
+binlog_do_db    = tyrell_corp
