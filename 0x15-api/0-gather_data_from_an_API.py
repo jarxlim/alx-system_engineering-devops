@@ -2,11 +2,11 @@
 """REST API for todo lists of employees"""
 
 import requests
-import sys
+import sys import argv
 
 
 if __name__ == '__main__':
-    employeeId = sys.argv[1]
+    employeeId = argv[1]
     employee = requests.get("https://jsonplaceholder.typicode.com/users/{}".
                         format(employeeId), verify=False).json()
     todo = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}".
