@@ -2,7 +2,7 @@
 """REST API for todo lists of employees"""
 
 import requests
-import sys import argv
+from sys import argv
 
 
 if __name__ == '__main__':
