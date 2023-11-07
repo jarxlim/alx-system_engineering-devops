@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""this module is a recursive function that queries the Reddit API,
+"""
+this module is a recursive function that queries the Reddit API,
 parses the title of all hot articles, and prints sorted count of given keyword"""
 
 import json
