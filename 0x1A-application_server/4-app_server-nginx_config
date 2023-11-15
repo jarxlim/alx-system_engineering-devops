@@ -29,5 +29,11 @@ server {
         proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
     }
 
+    location /api/ {
+        include proxy_params;
+        proxy_pass http://127.0.0.1:5002;
+    }
+
+
     access_log /var/log/nginx/airbnb-onepage-access.log;
     error_log /var/log/nginx/airbnb-onepage-error.log;
